@@ -17,6 +17,7 @@ class CreateComptesTable extends Migration
             $table->increments('id');
             $table->double('solde');
             $table->integer('utilisateur_id');
+            $table->integer('typecompte_id');
             $table->timestamps();
         });
     }
