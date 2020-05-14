@@ -16,9 +16,10 @@ class CreateTransactionsTable extends Migration
         Schema::create('transactions', function (Blueprint $table) {
             $table->increments('id');
             $table->double('amount');
-            $table->integer('compte_id');
-            $table->integer('transactiontype_id');
-            
+            $table->integer('compte_id')->unsigned();
+            $table->foreign('compte_id')->references('id')->on('comptes');
+            $table->integer('transactiontype_id')->unsigned();
+            $table->foreign('transactiontype_id')->references('id')->on('transactiontypes');
             $table->timestamps();
         });
     }

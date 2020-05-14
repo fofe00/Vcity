@@ -35,7 +35,7 @@ return [
 
         'sqlite' => [
             'driver' => 'sqlite',
-            'database' => env('DB_DATABASE', database_path('vlog.sqlite')),
+            'database' => env('DB_DATABASE', database_path('vblog.sqlite')),
             'prefix' => '',
         ],
 

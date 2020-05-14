@@ -16,8 +16,10 @@ class CreateComptesTable extends Migration
         Schema::create('comptes', function (Blueprint $table) {
             $table->increments('id');
             $table->double('solde');
-            $table->integer('utilisateur_id');
-            $table->integer('typecompte_id');
+            $table->integer('utilisateur_id')->unsigned();
+            $table->foreign('utilisateur_id')->references('id')->on('utilisateurs');
+            $table->integer('typecompte_id')->unsigned();
+            $table->foreign('typecompte_id')->references('id')->on('typecomptes');
             $table->timestamps();
         });
     }
