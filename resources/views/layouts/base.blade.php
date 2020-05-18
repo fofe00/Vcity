@@ -7,15 +7,21 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset("Semantic/semantic.css") }}">
     @yield("css")
-    <title>@yield('titre')::Vblog</title>
+    @if(isset($titre))
+    <title>{{$titre}}::Vblog</title>
+    @else
+      <title>Vblog</title>
+    @endif
 </head>
 <body>
+    @yield('menu')
     <div class="ui container">
         @yield('content')
     </div>
 
 <script src="{{ asset("Semantic/jquery.js") }}"></script>
 <script src="{{ asset("Semantic/semantic.js") }}"></script>
+@include('flashy::message')
 @yield("js")
 </body>
 </html>
