@@ -15,9 +15,17 @@ class Utilisateur extends Model implements Authenticatable
     {
         return $this->pwd;
     }
-    public function getRememberToken()
+    /*public function getRememberToken()
     {
         // TODO: Implement getRememberToken() method.
+    }*/
+    public function setAttribute($key, $value)
+    {
+        $isRememberTokenAttribute = $key == $this->getRememberTokenName();
+        if (!$isRememberTokenAttribute)
+        {
+            parent::setAttribute($key, $value);
+        }
     }
 
     public function comptes()

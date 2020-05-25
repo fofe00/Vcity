@@ -69,7 +69,7 @@ class UtilisateurController extends Controller
     {
         Auth::logout();
         Flashy::message('You have been logged out.');
-        return redirect(route("Ulogin"));
+        return redirect(route("login"));
     }
 
 }

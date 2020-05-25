@@ -19,5 +19,6 @@ Route::post('/register','UtilisateurController@tRegister')->name('tRegister');
 Route::get('/logout','UtilisateurController@logout')->name('tlogout');
 Route::get('/home','CompteController@home')->name('home');
 Route::get('/cop','CompteController@home')->name('compte');
-Route::get('/cop','CompteController@home')->name('water');
-Route::get('/cop','CompteController@home')->name('ligth');
+Route::get('/water','CompteController@water')->name('water');
+Route::get('/ligth','CompteController@ligth')->name('ligth');
+Route::post('/ligth','CompteController@postligth')->name('postligth');
